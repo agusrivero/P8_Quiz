@@ -259,7 +259,7 @@ describe("CORE19-08_quiz_express", function () {
                 this.msg_err = `Server not responding at ${url+"/quizzes"}\n\t\tError:${error_nav}\n\t\tReceived:${browser.text('body')}`;
                 should.not.exist(error_nav);
             }
-            this.msg_ok = `'${expected}' not found at ${url}\n\t\tReceived:${browser.text('body')}`;
+            this.msg_err = `'${expected}' not found at ${url}\n\t\tReceived:${browser.text('body')}`;
             Utils.search(expected, browser.text('body')).should.be.equal(true);
         }
     });
